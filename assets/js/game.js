@@ -47,13 +47,17 @@ else {
   window.alert(playerName + " still has " + playerHealth + " health left.");
 }
   };
-  // if player choses to fight, then fight
-if (promptFight === "fight" || promptFight === "FIGHT") {
+  // ask player if they'd like to fight or run
+  var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+
+  // if player choses to fight, fight
+  if (promptFight === "fight" || promptFight === "FIGHT") {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
     console.log(
       playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
+
   
     // check enemy's health
     if (enemyHealth <= 0) {
